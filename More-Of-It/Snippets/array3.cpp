@@ -1,0 +1,42 @@
+#include<stdio.h>
+int main()
+{
+	char a[1000],b,c[1000],d[1000],m,n,k,i=0,j=0;
+	while(a[i]!='EOF')
+	{
+		scanf("%c",&a[i]);
+		i=i+1;
+	}
+	n=i;
+	scanf("%c",&b);
+	while(c[j]!='EOF')
+	{
+		scanf("%c",&c[j]);
+		j=j+1;
+	}
+	k=j;
+	for(i=0;i<n;i++)
+	{
+		if(a[i]==b)
+		{
+			for(j=i+1,m=0;j<n;j++,m++)
+			{
+				d[m]=a[j];
+			}
+			for(j=0;j<k;j++,i++)
+			{
+				a[i]=c[j];
+			}
+			for(j=0;j<m;j++,i++)
+			{
+				a[i]=d[j];
+			}
+		}
+	}
+	i=0;
+	while(a[i]!='EOF')
+	{
+		printf("%c",a[i]);
+		i=i+1;
+	}
+}
